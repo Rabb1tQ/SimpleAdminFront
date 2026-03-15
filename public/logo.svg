@@ -1,23 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
   <defs>
-    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="boxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#409EFF;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#337ecc;stop-opacity:1" />
     </linearGradient>
+    <linearGradient id="topGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#67C23A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#529b2e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sideGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#79bbff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#409EFF;stop-opacity:1" />
+    </linearGradient>
   </defs>
   <!-- 背景圆角矩形 -->
-  <rect x="1" y="1" width="30" height="30" rx="6" ry="6" fill="url(#logoGradient)"/>
-  <!-- 盾牌形状 - 代表安全/管理 -->
-  <path d="M16 5L7 9V15C7 20.55 10.84 25.74 16 27C21.16 25.74 25 20.55 25 15V9L16 5Z" 
-        fill="none" 
-        stroke="#ffffff" 
-        stroke-width="2" 
-        stroke-linejoin="round"/>
-  <!-- 内部对勾 - 代表验证/授权 -->
-  <path d="M12 16L15 19L21 13" 
-        fill="none" 
-        stroke="#ffffff" 
-        stroke-width="2" 
-        stroke-linecap="round" 
-        stroke-linejoin="round"/>
+  <rect x="1" y="1" width="30" height="30" rx="6" ry="6" fill="url(#boxGradient)"/>
+  
+  <!-- 3D立方体 - 等距视角 -->
+  <!-- 左侧面 -->
+  <polygon points="7,16 16,11 16,23 7,18" 
+           fill="#ffffff" 
+           opacity="0.7"/>
+  
+  <!-- 右侧面 -->
+  <polygon points="16,11 25,16 25,18 16,23" 
+           fill="#ffffff" 
+           opacity="0.5"/>
+  
+  <!-- 顶面 -->
+  <polygon points="16,5 25,10 16,15 7,10" 
+           fill="url(#topGradient)"/>
+  
+  <!-- 顶面装饰线 -->
+  <line x1="16" y1="5" x2="16" y2="15" stroke="#ffffff" stroke-width="0.5" opacity="0.6"/>
+  <line x1="7" y1="10" x2="25" y2="10" stroke="#ffffff" stroke-width="0.5" opacity="0.6"/>
+  
+  <!-- 小立方体装饰 - 左上 -->
+  <polygon points="9,8 12,6.5 12,10 9,11.5" fill="#ffffff" opacity="0.4"/>
+  <polygon points="12,6.5 15,8 15,11.5 12,10" fill="#ffffff" opacity="0.3"/>
+  <polygon points="9,8 12,6.5 15,8 12,9.5" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- 小立方体装饰 - 右下 -->
+  <polygon points="19,20 22,18.5 22,22 19,23.5" fill="#ffffff" opacity="0.4"/>
+  <polygon points="22,18.5 25,20 25,23.5 22,22" fill="#ffffff" opacity="0.3"/>
+  <polygon points="19,20 22,18.5 25,20 22,21.5" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- 连接点装饰 -->
+  <circle cx="16" cy="15" r="1.5" fill="#ffffff"/>
+  <circle cx="16" cy="11" r="1" fill="#ffffff" opacity="0.8"/>
 </svg>
